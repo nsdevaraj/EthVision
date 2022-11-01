@@ -61,18 +61,6 @@ const listenForPrice = (node) => {
  * Toggles donation div between opened and closed
  */
 
-const toggleDonation = () => {
-  const closedDonationDiv = document.getElementById('donation-closed');
-  const openedDonationDiv = document.getElementById('donation-opened');
-  if (closedDonationDiv.style.display !== 'none') {
-    closedDonationDiv.style.display = 'none';
-    openedDonationDiv.style.display = 'block';
-  } else {
-    closedDonationDiv.style.display = 'block';
-    openedDonationDiv.style.display = 'none';
-  }
-};
-
 /**
  * initPrices
  * ----------
@@ -94,8 +82,7 @@ window.addEventListener('DOMContentLoaded', function () {
   initPrices();
   // Add listener to calculate-btn for clicks. Invoke calculateEth if clicked
   document.getElementById('calculate-btn').addEventListener('click', calculateConversion);
-  document.getElementById('donation-closed').addEventListener('click', toggleDonation);
-  document.getElementById('donation-opened').addEventListener('click', toggleDonation);
+  
   document.getElementById('eth-input').onkeypress = function(e) {
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
